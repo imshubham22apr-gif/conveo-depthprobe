@@ -40,7 +40,7 @@ I am applying for the Engineering Internship at Conveo (Antwerp).
 
 Rather than just theorizing about market research, I built a live Proof of Concept tailored to Conveo's core thesis ("70% of insights come from AI follow-up probing"):
 
-🚀 Live Demo / Repo: Conveo DepthProbe Engine
+Live Demo / Repo: Conveo DepthProbe Engine
 • Problem Solved: Traditional surveys stop at 1-line answers ("The UI was slow"). DepthProbe uses a multi-dimensional Information Density Heuristic (Specificity, Causality, Emotion, Actionability) to trigger targeted Socratic follow-up probes.
 • APEX-Guard Invariant: Resilient state machine defending against prompt injection and conversation derailment while preserving interviewer persona.
 • Stack Alignment: TypeScript, React, Tailwind, Deepgram Nova-2 STT streaming, and deterministic qualitative synthesis.

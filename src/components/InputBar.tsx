@@ -44,7 +44,7 @@ export const InputBar: React.FC<InputBarProps> = ({
           className="text-xs px-2.5 py-1 rounded-lg bg-rose-500/10 hover:bg-rose-500/20 text-rose-300 border border-rose-500/30 transition-colors flex items-center gap-1 cursor-pointer disabled:opacity-50"
           title="Simulates a flat 1-liner that triggers Socratic follow-up probing"
         >
-          <span>📉 Superficial 1-Liner</span>
+          <span>Superficial Answer</span>
           <span className="text-[10px] text-rose-400/80">(Density &lt; 35%)</span>
         </button>
 
@@ -59,7 +59,7 @@ export const InputBar: React.FC<InputBarProps> = ({
           className="text-xs px-2.5 py-1 rounded-lg bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 transition-colors flex items-center gap-1 cursor-pointer disabled:opacity-50"
           title="Simulates high-density answer with entities, latency, and workaround"
         >
-          <span>🚀 High Context & Root Cause</span>
+          <span>Detailed Root Cause</span>
           <span className="text-[10px] text-emerald-400/80">(Density &gt; 80%)</span>
         </button>
 
@@ -103,7 +103,7 @@ export const InputBar: React.FC<InputBarProps> = ({
             disabled={disabled}
             placeholder={
               isListening
-                ? "🎙️ Listening... speak into your microphone or type here..."
+                ? "Listening... speak into your microphone or type here..."
                 : "Type your response or use mic/presets above..."
             }
             className="w-full bg-slate-900/90 border border-slate-700/80 rounded-xl px-4 py-3.5 text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-conveo-500/50 focus:border-conveo-500 transition-all shadow-inner"

@@ -17,7 +17,7 @@ import {
   SynthesisReport,
 } from './types';
 import { evaluateInformationDensity } from './core/probing/heuristic';
-import { evaluateApexGuard } from './core/guards/apex-guard';
+import { evaluateResearchGuard } from './core/guards/research-guard';
 import { generateProbingQuestion } from './core/llm/client';
 import { synthesizeSession } from './core/synthesis/synthesizer';
 import { UnifiedSpeechRecognizer } from './core/audio/speech-recognition';
@@ -129,8 +129,8 @@ export function App() {
   const handleSendMessage = async (text: string) => {
     if (!text.trim() || isAnalyzing) return;
 
-    // 1. APEX-Guard Invariant Check (Prompt Injection & Topic Drift)
-    const guardResult = evaluateApexGuard(text, activeStudy, turns.length);
+    // 1. Research Scope Guard (Prompt Injection & Topic Drift)
+    const guardResult = evaluateResearchGuard(text, activeStudy, turns.length);
 
     // 2. Information Density Evaluation
     const metrics = evaluateInformationDensity(text);
@@ -150,7 +150,7 @@ export function App() {
     const newTurns = [...turns, userTurn];
     setTurns(newTurns);
 
-    // If APEX-Guard flagged a drift or injection, re-anchor immediately
+    // If Scope Guard flagged a drift or injection, re-anchor immediately
     if (!guardResult.passed) {
       const guardAiTurn: InterviewTurn = {
         id: 'guard-ai-' + Date.now(),
@@ -300,7 +300,7 @@ export function App() {
             <strong className="text-conveo-400">Conveo (YC S24)</strong> Engineering Internship.
           </span>
           <span className="font-mono text-[11px] text-slate-400">
-            Stack: React Router / Remix + TypeScript + Deepgram STT + Socratic LLM + APEX-Guard
+            Stack: React Router / Remix + TypeScript + Deepgram STT + Socratic LLM + Scope Guardrails
           </span>
         </div>
       </footer>

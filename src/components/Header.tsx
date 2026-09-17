@@ -39,7 +39,7 @@ export const Header: React.FC<HeaderProps> = ({
                 </span>
               </div>
               <p className="text-xs text-slate-400 hidden sm:block">
-                Autonomous Socratic Interview Engine with APEX-Guard Invariants
+                Autonomous Socratic Interview Engine with Scope Guardrails
               </p>
             </div>
           </div>

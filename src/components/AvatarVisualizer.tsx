@@ -79,7 +79,7 @@ export const AvatarVisualizer: React.FC<AvatarVisualizerProps> = ({
             <span className="text-sm font-bold text-slate-100">Dr. Sarah (Conveo AI Moderator)</span>
             <span className="text-[11px] px-2 py-0.5 rounded-full bg-slate-800 border border-slate-700 text-slate-300 flex items-center gap-1">
               <ShieldCheck className="w-3 h-3 text-emerald-400" />
-              APEX-Guard Active
+              Scope Guard Active
             </span>
           </div>
 

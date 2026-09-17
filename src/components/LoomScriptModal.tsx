@@ -27,7 +27,7 @@ Here is how it works:
 1. When a consumer gives a flat, superficial answer like "the export was slow"—which is where traditional surveys fail—our Information Density Heuristic immediately penalizes the brevity and detects the missing causality.
 2. Instead of moving on, the engine triggers an adaptive Socratic follow-up probe: asking for the exact screen, the latency duration, and whether they had to resort to an offline workaround like Excel.
 3. Once the density reaches 80%+, the state machine smoothly advances to the next hypothesis.
-4. We also implemented APEX-Guard: if the interviewee attempts prompt injection or derails into off-topic tangents, it gracefully re-anchors to the research goal without breaking persona.
+4. We also implemented Research Scope Guardrails: if the interviewee attempts prompt injection or derails into off-topic tangents, it gracefully re-anchors to the research goal without breaking persona.
 5. At the end, it deterministically synthesizes the transcript into an executive report with friction severity, root causes, and verbatim quotes.
 
 It's built on your exact stack: TypeScript, React, Tailwind, Deepgram Nova-2 speech streaming, and Socratic LLM orchestration.
@@ -42,7 +42,7 @@ Rather than just theorizing about market research, I built a live Proof of Conce
 
 Live Demo / Repo: Conveo DepthProbe Engine
 • Problem Solved: Traditional surveys stop at 1-line answers ("The UI was slow"). DepthProbe uses a multi-dimensional Information Density Heuristic (Specificity, Causality, Emotion, Actionability) to trigger targeted Socratic follow-up probes.
-• APEX-Guard Invariant: Resilient state machine defending against prompt injection and conversation derailment while preserving interviewer persona.
+• Research Scope Guard: Defends against prompt injection and conversation derailment while preserving interviewer persona.
 • Stack Alignment: TypeScript, React, Tailwind, Deepgram Nova-2 STT streaming, and deterministic qualitative synthesis.
 
 Check out the working prototype and code. I'd love to discuss how I can contribute to Conveo's fast-moving team!
@@ -152,7 +152,7 @@ Aashish`;
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-emerald-400" />
-                <span>APEX-Guard Prompt Injection Filter</span>
+                <span>Prompt Injection & Scope Filter</span>
               </div>
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-emerald-400" />

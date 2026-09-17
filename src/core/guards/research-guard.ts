@@ -19,7 +19,7 @@ const PROFANITY_PATTERNS = [
   /\b(f\*{1,3}k|fuck\w*|shit\w*|bitch\w*|asshole\w*)\b/i
 ];
 
-export function evaluateApexGuard(
+export function evaluateResearchGuard(
   userText: string,
   currentStudy: StudyTopic,
   _turnCount: number
@@ -32,7 +32,7 @@ export function evaluateApexGuard(
       return {
         passed: false,
         type: 'injection',
-        reason: 'APEX-Guard triggered: Adversarial prompt injection or system prompt extraction attempt detected.',
+        reason: 'Scope Guard: Adversarial prompt injection or system prompt extraction attempt detected.',
         reanchorPrompt:
           "I appreciate your curiosity! As an AI researcher for this study, my sole focus is learning about your direct experience with " +
           currentStudy.industry +
@@ -48,7 +48,7 @@ export function evaluateApexGuard(
       return {
         passed: false,
         type: 'inappropriate',
-        reason: 'APEX-Guard triggered: Hostile or inappropriate language detected.',
+        reason: 'Scope Guard: Hostile or inappropriate language detected.',
         reanchorPrompt:
           "I hear your intensity, and we really value honest, raw feedback. To help our product team fix these issues, could you share the specific task or screen that caused the most friction for you?"
       };
@@ -61,7 +61,7 @@ export function evaluateApexGuard(
       return {
         passed: false,
         type: 'drift',
-        reason: 'APEX-Guard triggered: Participant drifted from research domain into off-topic tangent.',
+        reason: 'Scope Guard: Participant drifted from research domain into off-topic tangent.',
         reanchorPrompt:
           "Haha, I'd love to chat about that another time! But to make sure our research time counts today, I want to refocus on " +
           currentStudy.title +
@@ -74,7 +74,7 @@ export function evaluateApexGuard(
   return {
     passed: true,
     type: 'none',
-    reason: 'Invariant verified: Input conforms to research scope and participant persona.',
+    reason: 'Scope verified: Input conforms to research topic and participant persona.',
     reanchorPrompt: ''
   };
 }

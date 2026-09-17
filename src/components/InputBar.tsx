@@ -70,10 +70,10 @@ export const InputBar: React.FC<InputBarProps> = ({
           }
           disabled={disabled}
           className="text-xs px-2.5 py-1 rounded-lg bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 border border-amber-500/30 transition-colors flex items-center gap-1 cursor-pointer disabled:opacity-50"
-          title="Tests APEX-Guard prompt injection & topic drift defense"
+          title="Tests prompt injection and off-topic drift defense"
         >
           <ShieldAlert className="w-3 h-3 text-amber-400" />
-          <span>Test APEX-Guard Invariant</span>
+          <span>Test Scope Guard</span>
         </button>
       </div>
 

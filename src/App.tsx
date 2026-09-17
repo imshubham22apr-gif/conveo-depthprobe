@@ -7,7 +7,6 @@ import { TranscriptView } from './components/TranscriptView';
 import { InputBar } from './components/InputBar';
 import { SynthesisDashboard } from './components/SynthesisDashboard';
 import { ApiKeyModal } from './components/ApiKeyModal';
-import { LoomScriptModal } from './components/LoomScriptModal';
 import { PRESET_STUDIES } from './data/presetStudies';
 import {
   ApiConfig,
@@ -38,7 +37,6 @@ export function App() {
 
   // Modals
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
-  const [isLoomOpen, setIsLoomOpen] = useState(false);
 
   // Config (Stored in localStorage)
   const [apiConfig, setApiConfig] = useState<ApiConfig>(() => {
@@ -240,7 +238,6 @@ export function App() {
           setActiveStudy(study);
         }}
         onOpenSettings={() => setIsSettingsOpen(true)}
-        onOpenLoomScript={() => setIsLoomOpen(true)}
         onSynthesize={handleSynthesize}
         sessionActive={turns.length > 1 && !synthesisReport}
       />
@@ -311,11 +308,6 @@ export function App() {
         onClose={() => setIsSettingsOpen(false)}
         config={apiConfig}
         onSaveConfig={(newConfig) => setApiConfig(newConfig)}
-      />
-
-      <LoomScriptModal
-        isOpen={isLoomOpen}
-        onClose={() => setIsLoomOpen(false)}
       />
     </div>
   );

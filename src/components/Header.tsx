@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sparkles, Video, Settings, Layers } from 'lucide-react';
+import { Sparkles, Settings, Layers } from 'lucide-react';
 import { StudyTopic } from '../types';
 import { PRESET_STUDIES } from '../data/presetStudies';
 
@@ -7,7 +7,6 @@ interface HeaderProps {
   currentStudy: StudyTopic;
   onSelectStudy: (study: StudyTopic) => void;
   onOpenSettings: () => void;
-  onOpenLoomScript: () => void;
   onSynthesize: () => void;
   sessionActive: boolean;
 }
@@ -16,7 +15,6 @@ export const Header: React.FC<HeaderProps> = ({
   currentStudy,
   onSelectStudy,
   onOpenSettings,
-  onOpenLoomScript,
   onSynthesize,
   sessionActive,
 }) => {
@@ -45,12 +43,6 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
 
           <div className="flex items-center gap-1.5 md:hidden">
-            <button
-              onClick={onOpenLoomScript}
-              className="px-2.5 py-1.5 rounded-lg bg-slate-800 text-xs text-slate-200 border border-slate-700 hover:bg-slate-700"
-            >
-              Pitch
-            </button>
             <button
               onClick={onOpenSettings}
               className="p-1.5 rounded-lg bg-slate-800 text-slate-300 border border-slate-700"
@@ -83,14 +75,6 @@ export const Header: React.FC<HeaderProps> = ({
 
         {/* Action Controls */}
         <div className="hidden md:flex items-center gap-2.5">
-          <button
-            onClick={onOpenLoomScript}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-conveo-500/10 border border-conveo-500/30 text-conveo-300 hover:bg-conveo-500/20 transition-colors text-xs font-semibold"
-            title="View 60-Second Pitch Script & Conveo Alignment"
-          >
-            <Video className="w-3.5 h-3.5 text-conveo-400" />
-            <span>60s Loom Pitch</span>
-          </button>
 
           {sessionActive && (
             <button

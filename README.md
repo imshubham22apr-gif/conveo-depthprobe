@@ -274,12 +274,6 @@ To make evaluating the engine straightforward, three preset buttons are placed d
 
 ---
 
-## 60-Second Video Pitch Script
-
-Click the **60s Loom Pitch** button in the top navigation bar to view or copy the demo pitch script prepared for the Conveo team.
-
----
-
 ## Author
 
 **Aashish**  
